@@ -19,7 +19,7 @@ public class CartPage {
     private static final By CARD_FIELD = By.id("card");
     private static final By MONTH_FIELD = By.id("month");
     private static final By YEAR_FIELD = By.id("year");
-    private static final By PURCHASE_BUTTON = By.cssSelector("button.btn.btn-primary");
+    private static final By PURCHASE_BUTTON = By.xpath("//button[@onclick='purchaseOrder()']");
     private static final By COMPLETE_MESSAGE = By.xpath("//h2[text()='Thank you for your purchase!']");
 
     @Step("Нажатие на кнопку place order")

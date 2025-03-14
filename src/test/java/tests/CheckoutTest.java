@@ -21,11 +21,15 @@ public class CheckoutTest extends BaseTest {
     @Owner("Джинчарадзе Лука")
     public void checkout() {
         loginPage.open()
-                .login("1", "1")
-                .selectCategory();
-                //.addToCart();
-        //assertEquals(cartPage.getCompleteMessage(),
-                //"Thank you for your purchase!",
-                //"Сообщение о покупке не отобразилось");
+                .selectCategory()
+                .addToCart()
+                .clickToCart()
+                .clickToPlaceOrder()
+                .fillingForm("Ivan", "Russia", "Moscow", "2202354724513569", "03", "2025")
+                .clickToPurchase()
+                .getCompleteMessage();
+        assertEquals(cartPage.getCompleteMessage(),
+                "Thank you for your purchase!",
+                "Сообщение о покупке не отобразилось");
     }
 }

@@ -22,6 +22,7 @@ public class BaseTest {
     @BeforeMethod
     public void setup(){
         ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
         options.addArguments("--start-maximized");
         options.addArguments("--incognito");
         options.addArguments("--disable-notification");
@@ -29,6 +30,8 @@ public class BaseTest {
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         loginPage = new LoginPage(driver);
+        productPage = new ProductPage(driver);
+        cartPage = new CartPage(driver);
     }
 
     @AfterMethod

@@ -33,9 +33,9 @@ public class LoginPage {
     }
 
     @Step("Выбор категории Мониторы")
-    public LoginPage selectCategory(){
+    public ProductPage selectCategory(){
         driver.findElement(By.xpath("//a[@onclick=\"byCat('notebook')\"]")).click();
-        driver.findElement(By.xpath("//a[text()='Iphone 6 32gb']")).click();
-        return this;
+        driver.findElement(By.xpath("//a[text()='MacBook Pro']")).click();
+        return new ProductPage(driver);
     }
 }
